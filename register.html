@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب | المنصة الأكاديمية</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Tahoma", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #eef5ff, #f8fbff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            min-height: 580px;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 15px 45px rgba(30, 70, 120, 0.12);
+        }
+
+        /* القسم التعريفي */
+        .welcome {
+            width: 45%;
+            background: linear-gradient(145deg, #145da0, #0b3d70);
+            color: white;
+            padding: 55px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 18px;
+            background: rgba(84, 1, 1, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .welcome p {
+            font-size: 16px;
+            line-height: 2;
+            color: #e1efff;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .features div {
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        /* نموذج التسجيل */
+        .register {
+            width: 55%;
+            padding: 50px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register h2 {
+            color: #16324f;
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #263b53;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d9e2ec;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            background: #fbfdff;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #1976c9;
+            box-shadow: 0 0 0 3px rgba(25, 118, 201, 0.1);
+            background: #fff;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            margin-top: 8px;
+            border-radius: 10px;
+            background: #145da0;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0b477d;
+            transform: translateY(-1px);
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 12px;
+            color: #8a98a8;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- الجانب التعريفي -->
+        <div class="welcome">
+
+            <div class="logo">🎓</div>
+
+            <h1>المنصة الأكاديمية</h1>
+
+            <p>
+                منصة تساعد الطالب والمعلم على تنظيم وإنجاز
+                التقارير الأكاديمية بطريقة سهلة ومنظمة.
+            </p>
+
+            <div class="features">
+                <div>📚 تنظيم الأعمال والتقارير الأكاديمية</div>
+                <div>📝 مساعدة في إعداد التقارير</div>
+                <div>👨‍🏫 أدوات مخصصة للمعلمين والطلاب</div>
+            </div>
+
+        </div>
+
+        <!-- نموذج التسجيل -->
+        <div class="register">
+
+            <h2>إنشاء حساب جديد</h2>
+
+            <p class="subtitle">
+                أنشئ حسابك وابدأ رحلتك الأكاديمية
+            </p>
+
+            <form action="process_register.php" method="POST">
+
+                <div class="form-group">
+                    <label>الاسم الكامل</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="أدخل اسمك الكامل"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>كلمة المرور</label>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="أدخل كلمة المرور"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>نوع الحساب</label>
+
+                    <select name="user_type" required>
+                        <option value="" disabled selected>
+                            اختر نوع الحساب
+                        </option>
+                        <option value="student">طالب</option>
+                        <option value="teacher">معلم</option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    إنشاء الحساب
+                </button>
+
+                <div class="note">
+                    جميع البيانات المدخلة تستخدم لأغراض المنصة الأكاديمية
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

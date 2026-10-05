@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مرحباً بك</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f2f5;
+            padding-top: 80px;
+        }
+        .welcome-box {
+            background: white;
+            padding: 40px;
+            display: inline-block;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1877f2;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #1877f2;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-box">
+        <h1 id="greeting">مرحباً بك!</h1>
+        <p id="sub-message">تم إنشاء حسابك بنجاح.</p>
+        <a href="register.html">إنشاء حساب آخر</a>
+    </div>
+
+    <script>
+        // قراءة الاسم ونوع الحساب من الرابط
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const type = urlParams.get('type');
+
+        if (name) {
+            const title = (type === 'teacher') ? 'الأستاذ/ة' : 'الطالب/ة';
+            document.getElementById('greeting').innerText = `مرحباً بك يا ${title} ${name} 👋`;
+            document.getElementById('sub-message').innerText = `تم تسجيلك بنجاح في جدول (${type}).`;
+        }
+    </script>
+
+</body>
+</html>
